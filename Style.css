@@ -1,0 +1,52 @@
+body {
+  font-family: Arial, sans-serif;
+  background: linear-gradient(to right, #6a11cb, #2575fc);
+  color: white;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+
+.centered {
+  margin-top: 15%;
+}
+
+.hidden {
+  display: none;
+}
+
+.wheel-container {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  margin: 50px auto;
+}
+
+#ferrisWheel {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border: 10px solid white;
+  border-radius: 50%;
+  animation: idleSpin 10s linear infinite;
+  transform-origin: center;
+  transition: transform 3s ease-out;
+}
+
+.slice {
+  position: absolute;
+  width: 120px;
+  height: 40px;
+  background: white;
+  color: black;
+  font-weight: bold;
+  text-align: center;
+  line-height: 40px;
+  transform: rotate(calc(var(--i) * 72deg)) translate(120px) rotate(calc(var(--i) * -72deg));
+  border-radius: 20px;
+}
+
+@keyframes idleSpin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
